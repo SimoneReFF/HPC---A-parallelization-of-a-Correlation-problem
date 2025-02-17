@@ -8,6 +8,11 @@
 
 /* Include benchmark-specific header. */
 /* Default data type is double, default size is 1000. */
+//#define MINI_DATASET
+//#define SMALL_DATASET
+//#define STANDARD_DATASET
+//#define LARGE_DATASET
+//#define EXTRALARGE_DATASET
 #include "correlation.h"
 
 

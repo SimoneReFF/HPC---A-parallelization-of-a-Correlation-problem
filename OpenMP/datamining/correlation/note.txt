@@ -1,0 +1,22 @@
+## TEMPI SEQUENZIALE######################################
+
+Da MINI a SMALL:
+Rapporto = 0.088370 / 0.000027 ≈ 3270
+
+Da SMALL a STANDARD:
+Rapporto = 0.693121 / 0.088370 ≈ 7.84
+
+Da STANDARD a LARGE:
+Rapporto = 47.297670 / 0.693121 ≈ 68.2
+
+Da LARGE a EXTRALARGE: (supposto circa 1000, subito)
+Rapporto = 465.798509 / 47.297670 ≈ 9.85
+
+##########################################################
+
+
+profiling
+- registri
+- bloccchi
+- sottoproblemi
+-
