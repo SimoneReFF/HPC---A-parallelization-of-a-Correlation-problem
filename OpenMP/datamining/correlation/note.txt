@@ -14,9 +14,18 @@ Rapporto = 465.798509 / 47.297670 ≈ 9.85
 
 ##########################################################
 
+Analisi delle ragioni della discrepanza
+Dalla proiezione, si potrebbe notare che la crescita del tempo
+tra i dataset non è completamente lineare né esponenziale in
+modo semplice. In realtà, potrebbe esserci un comportamento più
+complesso nei tempi di esecuzione legato a variabili come:
+    - Ottimizzazioni del compilatore o efficienza dell'algoritmo che migliorano man mano che i dataset diventano più grandi.
+    - Limiti hardware come cache, velocità di accesso alla memoria, e altri fattori che influenzano la performance.
 
-profiling
-- registri
-- bloccchi
-- sottoproblemi
--
+Proiezione più accurata
+Adesso che conosciamo il tempo per l'EXTRALARGE_DATASET (465.798509 secondi), possiamo rivedere i rapporti di crescita:
+Il rapporto tra LARGE e EXTRALARGE è 9.85, che è molto più basso di quanto mi aspettassi inizialmente, indicando una crescita più moderata del tempo di esecuzione quando si passa a dimensioni ancora più grandi.
+
+Conclusione
+Il fatto che il tempo di esecuzione per l'EXTRALARGE sia molto più basso rispetto alla proiezione iniziale suggerisce che ci siano ottimizzazioni, limitazioni hardware o effetti di saturazione che hanno impedito al tempo di crescere in modo esponenziale.
+Se hai bisogno di altre analisi o spiegazioni, fammi sapere!
