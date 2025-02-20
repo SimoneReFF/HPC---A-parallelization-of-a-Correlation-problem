@@ -19,12 +19,12 @@ typedef double DATA_TYPE; // Definizione di DATA_TYPE
 //#define SMALL_DATASET
 //#define STANDARD_DATASET
 //#define LARGE_DATASET
-#define EXTRALARGE_DATASET
+//#define EXTRALARGE_DATASET
 
 #include "correlation.cuh"
 
 /* Dimensioni predefinite */
-#define BLOCK_SIZE 8  // Dimensione blocchi per kernel 2D
+#define BLOCK_SIZE 32  // Dimensione blocchi
 
 __global__ void compute_mean(int m, int n, DATA_TYPE* data, DATA_TYPE* mean, DATA_TYPE float_n) {
     int j = blockIdx.x * blockDim.x + threadIdx.x;
