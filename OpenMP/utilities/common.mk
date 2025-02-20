@@ -17,7 +17,8 @@ OBJDUMP=objdump
 #OPT=-O2 -g -fopenmp
 #OPT=-O2 -g -fopenmp -DPOLYBENCH_TIME
 #OPT=-O2 -g -fopenmp -DPOLYBENCH_TIME -pg
-OPT=-O0 -g -fopenmp -DPOLYBENCH_TIME -pg
+#OPT=-O0 -g -fopenmp -DPOLYBENCH_TIME -pg
+OPT=-O3 -g -fopenmp -DPOLYBENCH_TIME -pg
 CFLAGS=$(OPT) -I. $(EXT_CFLAGS)
 LDFLAGS=-lm $(EXT_LDFLAGS)
 

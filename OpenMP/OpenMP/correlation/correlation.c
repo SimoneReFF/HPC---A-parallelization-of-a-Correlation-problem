@@ -104,21 +104,6 @@ void kernel_correlation(int m, int n,
           data[i][j] -= mean[j];
           data[i][j] /= sqrt(float_n) * stddev[j];
 	}
-    
-  /* Calculate the m * m correlation matrix. */
-    //#pragma omp parallel for private(j2, i) shared(symmat, data) reduction(+:symmat[:M][:M])
-    /*for (j1 = 0; j1 < _PB_M-1; j1++)
-      {
-        symmat[j1][j1] = 1.0;
-	    for (j2 = j1+1; j2 < _PB_M; j2++)
-	    {
-            symmat[j1][j2] = 0.0;
-	        for (i = 0; i < _PB_N; i++)
-	            symmat[j1][j2] += (data[i][j1] * data[i][j2]);
-	        symmat[j2][j1] = symmat[j1][j2];
-        }
-      }
-  symmat[_PB_M-1][_PB_M-1] = 1.0;*/
 
       #pragma omp parallel for private(j2, i) shared(symmat, data) schedule(dynamic)
           for (j1 = 0; j1 < _PB_M-1; j1++) {
@@ -168,6 +153,7 @@ int main(int argc, char** argv)
   /* Prevent dead-code elimination. All live-out data must be printed
      by the function call in argument. */
   polybench_prevent_dce(print_array(m, POLYBENCH_ARRAY(symmat)));
+  //print_array(m, POLYBENCH_ARRAY(symmat));
 
   /* Be clean. */
   POLYBENCH_FREE_ARRAY(data);

@@ -2,7 +2,7 @@
 *.o
 *.dep
 .idea
-
+.txt
 # Libraries
 *.lib
 *.a
