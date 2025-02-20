@@ -1,0 +1,40 @@
+profiling
+- registri
+- bloccchi
+- sottoproblemi
+
+gprof correlation_acc gmon.out > output.txt
+
+valgrind --tool=callgrind ./correlation_acc
+callgrind_annotate callgrind.out.*
+
+
+- prova il codice no reduction
+- testa con i thread
+16-7,5s
+14-12,9s
+12-13,83s
+10-14,51s
+8-17,31s
+6-17.45s
+4-20,19s
+- schedule static e dynamic
+dataset/ncore = iterate per thread
+2000/16 = 125
+16 thread 3,5 4,4 4,6  --> abbiamo la critical quindì non aspetta la più lunga ma continua a schedulare
+ci sono task che è evidente che hanno durata diversa e questo è dimostrato anche dal fatto che il tempo
+di esecuzione cambia tutte le volte anche di un po'.
+Visto che l'overhead di gestione è bilanciato da un aumento di performance, lo pago volentieri.
+
+chunking
+5  5,91s
+10  4,80s
+15  5,10s
+
+scelgo o di non settarli o impostare 16 perchè avendo durata diversa aumentandone le dimensioni
+abbasso l'overhead ma non li posso schedulare con una frequenza tale da mantenere le performance
+
+- n/numthred chunk con static
+
+fai dei test e capisci
+scegli i cunkig tu dynamic
